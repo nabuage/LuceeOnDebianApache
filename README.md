@@ -87,7 +87,7 @@ Download Lucee Linux (64b) Installer at `https://download.lucee.org/`.
 Run the installer
 ```
 chmod +x /home/username/Downloads/lucee-5.3.8.189-linux-x64-installer.run
-cd Downloads
+cd /home/username/Downloads
 ./lucee-5.3.8.189-linux-x64-installer.run
 ```
 
