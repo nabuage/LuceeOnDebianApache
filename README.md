@@ -7,6 +7,11 @@ Versions:
 
 **Apache Installation**
 
+Become a superuser
+```
+su
+```
+
 Add webadmin user
 ```
 sudo groupadd webadmin
@@ -74,4 +79,4 @@ Add new entry
 Note: `Save from nano: CTRL+SHIFT+o`
 Note: `Exit from nano: CTRL+x`
 
-Installation is complete. Enter http://luceeapp/ in your browser. It should display content from /home/username/www/luceeapp folder.
+Apache installation and setup is complete. Enter http://luceeapp/ in your browser. It should display content from /home/username/www/luceeapp folder.
