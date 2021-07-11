@@ -117,6 +117,11 @@ Since I did not want to start Lucee during boot time, I have to start Lucee serv
 /opt/lucee/lucee_ctl start
 ```
 
+Change development directory permission
+```
+chown -R username:webadmin /home/username/www/luceeapp/
+```
+
 Lucee installation is complete. Enter http://luceeapp/ in your browser. It should display ColdFusion content from /home/username/www/luceeapp folder.
 
 **Use mod_jk instead of mod_cfml**
