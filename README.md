@@ -54,7 +54,7 @@ ErrorLog ${APACHE_LOG_DIR}/error.luceeapp.log
 CustomLog ${APACHE_LOG_DIR}/access.luceeapp.log combined
 ```
 Note: `Save from nano: CTRL+SHIFT+o`
-Note: `Exit from nano: CTRL-x`
+Note: `Exit from nano: CTRL+x`
 
 Enable the new site
 ```
@@ -72,6 +72,6 @@ Add new entry
 127.0.0.1 luceeapp
 ```
 Note: `Save from nano: CTRL+SHIFT+o`
-Note: `Exit from nano: CTRL-x`
+Note: `Exit from nano: CTRL+x`
 
 Installation is complete. Enter http://luceeapp/ in your browser. It should display content from /home/username/www/luceeapp folder.
