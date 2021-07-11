@@ -117,4 +117,4 @@ Since I did not want to start Lucee during boot time, I have to start Lucee serv
 /opt/lucee/lucee_ctl start
 ```
 
-Lucee installation complete. Enter http://luceeapp/ in your browser. It should display ColdFusion content from /home/username/www/luceeapp folder.
+Lucee installation is complete. Enter http://luceeapp/ in your browser. It should display ColdFusion content from /home/username/www/luceeapp folder.
