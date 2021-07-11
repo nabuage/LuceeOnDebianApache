@@ -118,3 +118,60 @@ Since I did not want to start Lucee during boot time, I have to start Lucee serv
 ```
 
 Lucee installation is complete. Enter http://luceeapp/ in your browser. It should display ColdFusion content from /home/username/www/luceeapp folder.
+
+**Use mod_jk instead of mod_cfml**
+
+During Lucee installation, answer `n` to `Yes, Install mod_cfml [Y/n]`.
+
+Install mod_jk
+```
+apt-get install libapache2-mod-jk
+```
+
+Edit /etc/libapache2-mod-jk/httpd-jk.conf
+```
+nano nano /etc/libapache2-mod-jk/httpd-jk.conf
+```
+
+Add the following before the closing IfModule tag
+```
+JkMount /*.cfm ajp13_worker
+JkMountCopy all
+```
+Note: `Save from nano: CTRL+SHIFT+o`
+Note: `Exit from nano: CTRL+x`
+
+Edit /etc/libapache2-mod-jk/workers.properties
+```
+nano /etc/libapache2-mod-jk/workers.properties
+```
+
+Set the following values
+```
+workers.tomcat_home=/opt/lucee/tomcat
+```
+Note: `Save from nano: CTRL+SHIFT+o`
+Note: `Exit from nano: CTRL+x`
+
+Edit /opt/lucee/tomcat/conf/server.xml
+```
+nano /opt/lucee/tomcat/conf/server.xml
+```
+
+Set the following values
+```
+<Connector protocol="AJP/1.3" port="8009" secretRequired="false" address="::1" redirectPort="8443" />
+<Host name="luceeapp" appBase="webapps">
+ <Context path="" docBase="/home/username/www/luceeapp" />
+</Host>
+```
+Note: `Save from nano: CTRL+SHIFT+o`
+Note: `Exit from nano: CTRL+x`
+
+Restart Apache and Lucee
+```
+systemctl restart apache2
+/opt/lucee/lucee_ctl restart
+```
+
+MOD_JK setup is complete.
