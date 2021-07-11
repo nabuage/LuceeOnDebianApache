@@ -19,11 +19,15 @@ apt-get install apache2
 systemctl start apache2
 
 #Create development folder
+
 mkdir /home/username/www
+
 mkdir /home/username/www/luceeapp
 
 #Create symlink of development folder inside default Apache folder to simplify user permission.
+
 cd /var/www/html/
+
 ln -s /home/username/www/luceeapp luceeapp.symlink
 
 #Copy default Apache configuration as base for new site http://luceeapp/
@@ -31,13 +35,13 @@ cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/lu
 
 #Edit /etc/apache2/sites-available/luceeapp.conf
 nano /etc/apache2/sites-available/luceeapp.conf
+
 #Set the following values
--------------------------
-ServerName luceeapp
-DocumentRoot /var/www/html/luceeapp.symlink
-ErrorLog ${APACHE_LOG_DIR}/error.luceeapp.log
-CustomLog ${APACHE_LOG_DIR}/access.luceeapp.log combined
--------------------------
+- ServerName luceeapp
+- DocumentRoot /var/www/html/luceeapp.symlink
+- ErrorLog ${APACHE_LOG_DIR}/error.luceeapp.log
+- CustomLog ${APACHE_LOG_DIR}/access.luceeapp.log combined
+
 #Save from nano: CTRL+SHIFT+o
 #Exit from nano: CTRL-x
 
